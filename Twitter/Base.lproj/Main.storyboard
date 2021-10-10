@@ -49,12 +49,12 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="110.19490254872565"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="1Ax-uZ-KQe">
             <objects>
-                <tableViewController id="HW1-t8-2f6" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="HW1-t8-2f6" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dSG-lF-scb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -72,7 +72,14 @@
                             <outlet property="delegate" destination="HW1-t8-2f6" id="vwV-cT-OIj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="H0P-YT-Iiu"/>
+                    <navigationItem key="navigationItem" title="Home" id="H0P-YT-Iiu">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="HLV-n0-5FQ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="HW1-t8-2f6" id="oZE-mc-Kk8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BW6-k2-QGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,10 +88,22 @@
         <!--Navigation Controller-->
         <scene sceneID="vOW-UX-iI6">
             <objects>
-                <navigationController id="UJr-Ap-oIn" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="UJr-Ap-oIn" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e32-fj-xkS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.29048687880000001" green="0.68017802120000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.29048687880000001" green="0.68017802120000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="HW1-t8-2f6" kind="relationship" relationship="rootViewController" id="hvx-Gs-cPq"/>
